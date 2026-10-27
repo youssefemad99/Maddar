@@ -13,14 +13,14 @@
     "whatsappRaw": "201212529087",
     "whatsappPrefill": "السلام عليكم، أبغى أحجز استشارة مع مدار",
     "callUrl": "tel:+201212529087",
-    "email": "contact@madar.sa",
-    "domain": "madar.sa",
+    "email": "contact@[madar-domain]",
+    "domain": "[madar-domain]",
     "social": {
-      "instagram": "https://instagram.com/madar.sa",
-      "tiktok": "https://tiktok.com/@madar.sa",
-      "snapchat": "https://snapchat.com/add/madar.sa",
-      "x": "https://x.com/madar_sa",
-      "linkedin": "https://linkedin.com/company/madar-sa"
+      "instagram": "https://instagram.com/[madar-account]",
+      "tiktok": "https://tiktok.com/@[madar-account]",
+      "snapchat": "https://snapchat.com/add/[madar-account]",
+      "x": "https://x.com/[madar-account]",
+      "linkedin": "https://linkedin.com/company/[madar-account]"
     },
     "commercialRegistry": "",
     "address": "المملكة العربية السعودية، الرياض",

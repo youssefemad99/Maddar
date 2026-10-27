@@ -29,8 +29,8 @@
       whatsapp: "+20 121 252 9087",
       whatsappRaw: "201212529087",
       telUrl: "tel:+201212529087",
-      email: "contact@madar.sa",
-      domain: "madar.sa",
+      email: "contact@[madar-domain]",
+      domain: "[madar-domain]",
       commercialRegistry: "معروف / وثيقة عمل حر معتمدة",
       responsePromise: "نرد خلال 24 ساعة",
       whatsappPrefill: "السلام عليكم، أبغى أحجز استشارة مع مدار"
@@ -1435,7 +1435,7 @@
       "@type": "ProfessionalService",
       "name": "مدار - MADAR",
       "description": "شركة متخصصة في المونتاج وتصميم المواقع والجرافيك ديزاين في السوق السعودي والخليجي.",
-      "url": "https://madar.sa/",
+      "url": "./",
       "telephone": "+201212529087",
       "address": {
         "@type": "PostalAddress",

@@ -53,7 +53,7 @@ def check_pre_deployment():
             with open(content_path, 'r', encoding='utf-8') as f:
                 content_raw = f.read()
             bracket_matches = re.findall(r'\[(N|X|Placeholder|\.\.\.|[A-Za-z0-9_\u0600-\u06FF\s]+)\]', content_raw)
-            # Filter matches that are actual placeholders like [X], [N], [اسم العميل], [email@madar.sa]
+            # Filter matches that are actual placeholders like [X], [N], [اسم العميل], [contact@[madar-domain]]
             unresolved = [m for m in bracket_matches if any(c in m for c in ['N', 'X', '@', 'اسم', 'رقم', 'رابط'])]
             if unresolved:
                 has_errors = True
