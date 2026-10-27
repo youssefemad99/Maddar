@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "demo": true,
+    "name": "اسم العميل — تجريبي",
+    "role": "المسمى الوظيفي",
+    "company": "اسم الشركة / النشاط",
+    "city": "الرياض",
+    "service": "montage",
+    "quote": "رأي تجريبي يُستبدل فور استلام تقييم موثق من شركاء نجاحنا.",
+    "source": "whatsapp",
+    "date": "2025-01",
+    "consent": true,
+    "avatar": null
+  },
+  {
+    "id": 2,
+    "demo": true,
+    "name": "اسم العميل — تجريبي",
+    "role": "مدير التسويق",
+    "company": "متجر إلكتروني سعودي",
+    "city": "جدة",
+    "service": "web",
+    "quote": "رأي تجريبي يُستبدل فور استلام تقييم موثق من شركاء نجاحنا.",
+    "source": "google",
+    "date": "2025-02",
+    "consent": true,
+    "avatar": null
+  },
+  {
+    "id": 3,
+    "demo": true,
+    "name": "اسم العميل — تجريبي",
+    "role": "مؤسس علامة تجارية",
+    "company": "كافيه وضيافة مختصة",
+    "city": "الدمام",
+    "service": "graphic",
+    "quote": "رأي تجريبي يُستبدل فور استلام تقييم موثق من شركاء نجاحنا.",
+    "source": "video",
+    "date": "2025-03",
+    "consent": true,
+    "avatar": null
+  }
+]

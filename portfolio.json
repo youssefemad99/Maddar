@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "demo": true,
+    "category": "montage",
+    "categoryLabel": "مونتاج",
+    "title": "ريل سينمائي",
+    "desc": "واجهة خط زمني احترافية (Timeline): مسارات فيديو وتلوين وصوت متزامنة مع مؤشر تشغيل متقدم.",
+    "service": "montage",
+    "ctaText": "اطلب شغلاً بهذا الأسلوب",
+    "demoType": "timeline"
+  },
+  {
+    "id": 2,
+    "demo": true,
+    "category": "montage",
+    "categoryLabel": "مونتاج",
+    "title": "فيديو قصير للسوشيال",
+    "desc": "إطار جوال عمودي 9:16 بنصوص كابشن متحركة تبرز كلمة بكلمة لرفع التفاعل على تيك توك وريلز.",
+    "service": "montage",
+    "ctaText": "اطلب شغلاً بهذا الأسلوب",
+    "demoType": "social_video"
+  },
+  {
+    "id": 3,
+    "demo": true,
+    "category": "web",
+    "categoryLabel": "مواقع",
+    "title": "موقع تعريفي بالعربي",
+    "desc": "إطار متصفح رقمي يعرض تخطيطاً حياً (Wireframe) لصفحة هبوط عربية RTL مع حركة انسيابية تفاعلية.",
+    "service": "web",
+    "ctaText": "اطلب شغلاً بهذا الأسلوب",
+    "demoType": "landing_wireframe"
+  },
+  {
+    "id": 4,
+    "demo": true,
+    "category": "web",
+    "categoryLabel": "مواقع",
+    "title": "متجر إلكتروني",
+    "desc": "واجهة تجارة إلكترونية متطورة: شبكة منتجات فاخرة وسلة تسوق بحركة إضافة تفاعلية سلسة.",
+    "service": "web",
+    "ctaText": "اطلب شغلاً بهذا الأسلوب",
+    "demoType": "ecommerce"
+  },
+  {
+    "id": 5,
+    "demo": true,
+    "category": "graphic",
+    "categoryLabel": "جرافيك",
+    "title": "هوية بصرية",
+    "desc": "لوحة براند متكاملة: شعار هندسي، لوحة ألوان منتقاة، ونقوش سدو ونجدية أصيلة مستوحاة من الهوية.",
+    "service": "graphic",
+    "ctaText": "اطلب شغلاً بهذا الأسلوب",
+    "demoType": "brand_board"
+  },
+  {
+    "id": 6,
+    "demo": true,
+    "category": "graphic",
+    "categoryLabel": "جرافيك",
+    "title": "تصاميم سوشيال",
+    "desc": "ثلاثة منشورات متناسقة بتصاميم بصرية مختلفة تتبدل بلطف وسلاسة لإبراز تنوع المحتوى الرقمي.",
+    "service": "graphic",
+    "ctaText": "اطلب شغلاً بهذا الأسلوب",
+    "demoType": "social_posts"
+  }
+]

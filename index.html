@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="ar-SA" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدار | M A D A R — مونتاج، تصميم مواقع، وهوية بصرية بروح سعودية معاصرة</title>
+  
+  <!-- Domain Lock & Isolation (Brief v3 Section 4) -->
+  <script>
+    (function() {
+      try {
+        var allowedHosts = ['localhost', '127.0.0.1', 'madar.sa', 'www.madar.sa'];
+        var host = window.location.hostname;
+        if (allowedHosts.length > 0 && allowedHosts.indexOf(host) === -1 && host !== '') {
+          window.location.href = 'https://madar.sa';
+        }
+      } catch(e) {}
+    })();
+  </script>
+
+  <!-- Pre-Paint Theme Initialization (Prevents Theme Flash - Brief v3 Section 1) -->
+  <script>
+    (function() {
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var urlTheme = urlParams.get('theme');
+        if (urlTheme === 'light' || urlTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', urlTheme);
+          localStorage.setItem('madar-theme', urlTheme);
+          return;
+        }
+        var savedTheme = localStorage.getItem('madar-theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="شركة مدار لخدمات مونتاج الفيديو، تصميم وتطوير المواقع والمنصات، وبناء الهوية البصرية والجرافيك ديزاين في السوق السعودي والخليجي. إبداع يعكس أصالة التراث بمستوى الشركات الكبرى.">
+  <meta name="keywords" content="مدار, مونتاج فيديو السعودية, تصميم مواقع الرياض, جرافيك ديزاين, هوية بصرية سعودية, شركات إنتاج محتوى">
+  <meta name="author" content="Madar - مدار">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://madar.sa/">
+  <meta property="og:title" content="مدار | M A D A R — حيث تدور الفكرة حول عميلها">
+  <meta property="og:description" content="مونتاج، تصميم مواقع، وهوية بصرية بروح سعودية وبمستوى الشركات الكبرى.">
+  <meta property="og:image" content="assets/logo-madar-full.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Vendor Animation Libraries -->
+  <script src="vendor/lenis.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       0. شاشة الدخول (Intro Screen / Preloader with Orbit Animation)
+       ========================================================================== -->
+  <div id="preloader" role="dialog" aria-modal="true" aria-label="شاشة الدخول">
+    <!-- Central Golden Light Beam that glows and flares before doors part -->
+    <div class="door-seam-light" id="door-seam-light" aria-hidden="true"></div>
+
+    <!-- Left & Right Najdi Doors that part open from the center -->
+    <div class="preloader-door door-right">
+      <div class="door-decoration">
+        <div class="door-stud"></div>
+        <div class="door-stud"></div>
+        <div class="door-stud"></div>
+        <div class="door-stud"></div>
+      </div>
+    </div>
+    <div class="preloader-door door-left">
+      <div class="door-decoration">
+        <div class="door-stud"></div>
+        <div class="door-stud"></div>
+        <div class="door-stud"></div>
+        <div class="door-stud"></div>
+      </div>
+    </div>
+
+    <!-- Center Content: Ring draws itself, wordmark rises, bronze ball completes full orbit -->
+    <div class="preloader-center-content">
+      <div class="preloader-logo-stage">
+        <!-- SVG Orbit Ring & Ball (ViewBox 879x773 matched) -->
+        <svg class="preloader-orbit-svg" viewBox="0 0 879 773" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="شعار مدار">
+          <defs>
+            <radialGradient id="preloaderBallGrad" cx="38%" cy="32%" r="70%">
+              <stop offset="0" stop-color="#F6DDB8"/>
+              <stop offset="0.45" stop-color="#D49A62"/>
+              <stop offset="1" stop-color="#8E5A31"/>
+            </radialGradient>
+            <filter id="preloaderBallGlow" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle id="preloader-ring" cx="483.6" cy="401.0" r="206.5" fill="none" stroke="#B07A4A" stroke-width="2.6" stroke-dasharray="1297.5" stroke-dashoffset="1297.5"/>
+          <circle id="preloader-ring-outer" cx="483.6" cy="401.0" r="236.5" fill="none" stroke="#D49A62" stroke-width="1.2" stroke-dasharray="6 12" opacity="0"/>
+          <circle id="preloader-ball" cx="626.6" cy="254.6" r="18.5" fill="url(#preloaderBallGrad)" filter="url(#preloaderBallGlow)"/>
+        </svg>
+
+        <!-- Wordmark image overlaid in front of the ring -->
+        <img id="preloader-wordmark" class="preloader-wordmark" src="assets/logo-madar-wordmark.png" alt="مدار MADAR">
+      </div>
+
+      <div class="preloader-caption-wrap" id="preloader-caption-wrap">
+        <p class="preloader-welcome">حيّاك الله في مدار... حيث تدور الفكرة حول عميلها</p>
+        <div class="sadu-ribbon preloader-sadu"></div>
+      </div>
+    </div>
+
+    <button id="skip-preloader-btn" class="btn-skip-preloader" aria-label="تخطي شاشة الدخول">
+      تخطي الحركة ↷
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       Living Saudi Orbital Background Pattern (Interactive & Animated)
+       ========================================================================== -->
+  <div id="madar-living-bg" class="madar-living-bg" aria-hidden="true">
+    <canvas id="madar-orbit-canvas" class="madar-orbit-canvas"></canvas>
+    <div class="living-ambient-glow glow-primary"></div>
+    <div class="living-ambient-glow glow-secondary"></div>
+    <div class="living-pattern-overlay"></div>
+  </div>
+
+  <!-- ==========================================================================
+       Header & Navigation Bar
+       ========================================================================== -->
+  <header id="site-header">
+    <div class="container header-container">
+      <a href="#hero" class="site-brand" aria-label="مدار - الصفحة الرئيسية">
+        <img src="assets/logo-madar-full-cropped.png" alt="مدار | MADAR" class="brand-logo-img logo-theme-dark">
+        <img src="assets/logo-madar-full-cropped-dark.png" alt="مدار | MADAR" class="brand-logo-img logo-theme-light">
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="القائمة الرئيسية">
+        <a href="#hero" class="nav-link" data-i18n-en="Home">الرئيسية</a>
+        <a href="#services" class="nav-link" data-i18n-en="Services">الخدمات</a>
+        <a href="#journey" class="nav-link" data-i18n-en="Journey">مسيرتنا</a>
+        <a href="#portfolio" class="nav-link" data-i18n-en="Works">أعمالنا</a>
+        <a href="#process" class="nav-link" data-i18n-en="Process">طريقة العمل</a>
+        <a href="#testimonials" class="nav-link" data-i18n-en="Commitments">التزاماتنا</a>
+        <a href="#faq" class="nav-link" data-i18n-en="FAQ">أسئلة شائعة</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Toggle (Light / Dark Mode per Brief v3 Section 1) -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="تبديل الوضع" aria-pressed="false" title="تبديل الوضع (فاتح / داكن)">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="lang-toggle-btn" aria-label="تبديل لغة الموقع">
+          <span>English</span>
+          <span style="font-size: 0.85rem;">🌐</span>
+        </button>
+
+        <!-- Header WhatsApp Button -->
+        <a href="https://wa.me/201212529087?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%B9%20%D9%85%D8%AF%D8%A7%D8%B1" 
+           class="btn-header-whatsapp" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="تواصل مع مدار عبر واتساب">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+          </svg>
+          <span>واتساب</span>
+        </a>
+
+        <a href="#booking" class="btn btn-primary" data-i18n-en="Book Consultation">
+          <span>احجز استشارتك</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة المتنقلة" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vertical Scroll Progress Indicator with Bronze Orbit Ball -->
+  <aside id="scroll-progress-wrap" aria-hidden="true">
+    <div class="progress-track">
+      <div class="progress-bar-fill"></div>
+      <div class="progress-orbit-dot"></div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         1. البداية (Hero Section with Orbit Ring Backdrop & Word Reveal)
+         ========================================================================== -->
+    <section id="hero" class="bg-dark">
+      <!-- Section 2: New Orbit-Ring Pattern (شبكة مدارات) with 12 Floating Spheres -->
+      <div class="madar-orbit-pattern-bg" aria-hidden="true">
+        <div class="madar-orbit-spheres">
+          <div class="orbit-sphere sphere-1"></div>
+          <div class="orbit-sphere sphere-2"></div>
+          <div class="orbit-sphere sphere-3"></div>
+          <div class="orbit-sphere sphere-4"></div>
+          <div class="orbit-sphere sphere-5"></div>
+          <div class="orbit-sphere sphere-6"></div>
+          <div class="orbit-sphere sphere-7"></div>
+          <div class="orbit-sphere sphere-8"></div>
+          <div class="orbit-sphere sphere-9"></div>
+          <div class="orbit-sphere sphere-10"></div>
+          <div class="orbit-sphere sphere-11"></div>
+          <div class="orbit-sphere sphere-12"></div>
+        </div>
+      </div>
+
+      <!-- Orbital Ring Backdrop behind Headline (Brief v2 Page 1) -->
+      <div class="hero-orbit-backdrop" aria-hidden="true">
+        <svg viewBox="0 0 879 773" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="heroBallGrad" cx="38%" cy="32%" r="70%">
+              <stop offset="0" stop-color="#F6DDB8"/>
+              <stop offset="0.45" stop-color="#D49A62"/>
+              <stop offset="1" stop-color="#8E5A31"/>
+            </radialGradient>
+          </defs>
+          <circle id="hero-orbit-ring" cx="483.6" cy="401.0" r="206.5" fill="none" stroke="#B07A4A" stroke-width="2.5"/>
+          <circle id="hero-orbit-ball" cx="626.6" cy="254.6" r="18.5" fill="url(#heroBallGrad)"/>
+        </svg>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- Trust Badge without brackets -->
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span data-i18n-en="Contemporary Saudi Identity with Global Standards">هوية سعودية معاصرة بمستوى الشركات الكبرى</span>
+          </div>
+
+          <!-- Main Word-by-Word Revealed Title (Cream color per v2) -->
+          <h1 class="hero-title">
+            <span class="hero-title-word">نصنع</span>
+            <span class="hero-title-word">حضور</span>
+            <span class="hero-title-word">علامتك</span>
+            <br>
+            <span class="hero-title-word highlight">في السوق السعودي</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="hero-subtitle" data-i18n-en="Video editing, websites, and graphic design with authentic Saudi taste and top-tier corporate standards.">
+            مونتاج ومواقع وجرافيك، بذوق يعرف السوق السعودي ويحترم هويته، وبمستوى يصنع لعلامتك هيبة وفارقاً حقيقياً.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-ctas">
+            <a href="#booking" class="btn btn-primary" data-i18n-en="Book Consultation">
+              <span>احجز استشارتك</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+
+            <a href="https://wa.me/201212529087?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%B9%20%D9%85%D8%AF%D8%A7%D8%B1" 
+               class="btn btn-secondary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               data-i18n-en="Chat via WhatsApp">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+              </svg>
+              <span>تواصل عبر واتساب</span>
+            </a>
+          </div>
+
+          <!-- Reassurance note without brackets -->
+          <div class="hero-trust-note">
+            <svg class="trust-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span data-i18n-en="Response within 24 hours • Tailored for Saudi business sector">نرد خلال 24 ساعة • مصممة لخدمة قطاع الأعمال السعودي</span>
+          </div>
+        </div>
+
+        <!-- Celestial Orbit Stage with New Logo -->
+        <div class="hero-visual">
+          <div class="celestial-orbit-stage">
+            <div class="celestial-ring celestial-ring-outer"></div>
+            <div class="celestial-ring"></div>
+            <div class="celestial-ring celestial-ring-inner"></div>
+
+            <!-- Central Core Madar Symbol (Dual Wordmarks for Dark / Light Modes) -->
+            <div class="celestial-core-symbol">
+              <img src="assets/logo-madar-wordmark.png" alt="مدار" class="wordmark-theme-dark">
+              <img src="assets/logo-madar-wordmark-dark.png" alt="مدار" class="wordmark-theme-light">
+            </div>
+
+            <!-- Rotating Orbiting Celestial Body (Bronze Ball) -->
+            <div class="celestial-orbiting-body">
+              <div class="celestial-dot"></div>
+            </div>
+
+            <!-- Floating Capability Badges -->
+            <div class="floating-hero-pill pill-1">
+              <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="23 7 16 12 23 17 23 7"/>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+              </svg>
+              <span>مونتاج فيديو إعلاني</span>
+            </div>
+
+            <div class="floating-hero-pill pill-2">
+              <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+              <span>تصميم مواقع رقمية</span>
+            </div>
+
+            <div class="floating-hero-pill pill-3">
+              <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
+              </svg>
+              <span>هوية بصرية وجرافيك</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Hint -->
+      <a href="#trust-bar" class="hero-scroll-hint" aria-label="انزل لاستكشاف المزيد">
+        <span data-i18n-en="Scroll to discover">اسحب لتكتشف</span>
+        <svg class="scroll-arrow-anim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Najdi Triangular Divider Transition -->
+    <div class="najdi-triangles-divider to-light" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         2. شريط الميزات والأرقام (Definition-True Features Strip - Brief v2 Section 4-a)
+         ========================================================================== -->
+    <section id="trust-bar" aria-label="ميزات وركائز الثقة في مدار">
+      <div class="container">
+        <div class="features-strip-grid" id="features-strip-grid" data-madar-reveal="group">
+          <!-- Feature 1 -->
+          <div class="feature-strip-card" data-madar-reveal="card" data-madar-delay="0">
+            <div class="feature-strip-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <h3 class="feature-strip-title">3 تخصصات في مكان واحد</h3>
+            <p class="feature-strip-desc">مونتاج، مواقع، وجرافيك متكامل</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-strip-card" data-madar-reveal="card" data-madar-delay="90">
+            <div class="feature-strip-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3 class="feature-strip-title">تواصل مباشر مع الفريق</h3>
+            <p class="feature-strip-desc">استجابة وتنسيق سريع عبر واتساب</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-strip-card" data-madar-reveal="card" data-madar-delay="180">
+            <div class="feature-strip-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <h3 class="feature-strip-title">هوية سعودية في كل تفصيلة</h3>
+            <p class="feature-strip-desc">أصالة نجدية وحداثة تليق بعلامتك</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-strip-card" data-madar-reveal="card" data-madar-delay="270">
+            <div class="feature-strip-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                <line x1="6" y1="1" x2="6" y2="4"/>
+                <line x1="10" y1="1" x2="10" y2="4"/>
+                <line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+            </div>
+            <h3 class="feature-strip-title">استشارة أولى استكشافية</h3>
+            <p class="feature-strip-desc">نناقش فكرتك ونرسم خارطة طريقك</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. الخدمات (Services Section)
+         ========================================================================== -->
+    <section id="services" class="section-padding bg-dark">
+      <div class="bg-mesh-roshan-light" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge light" data-madar-reveal>
+            <span>✦</span>
+            <span data-i18n-en="Our Core Services">حلولنا الإبداعية المتكاملة</span>
+          </span>
+          <h2 class="section-title" data-madar-reveal="heading" data-madar-delay="90" data-i18n-en="Tailored Services for Market Leaders">خدمات تصنع الفارق لعلامتك التجارية</h2>
+          <p class="section-subtitle" data-madar-reveal data-madar-delay="180" data-i18n-en="Crafted with Saudi heritage spirit and delivered with high-end corporate standards.">
+            نجمع بين قوة السرد البصري، وحداثة التقنية، ورصانة التصميم لتلبية تطلعات السوق السعودي والخليجي.
+          </p>
+        </div>
+
+        <div class="services-grid" data-madar-reveal="group">
+          <!-- Service Card 1: مونتاج الفيديو -->
+          <article class="service-card" data-madar-reveal="card" data-madar-delay="0">
+            <div class="sadu-ribbon" aria-hidden="true"></div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                  <line x1="7" y1="2" x2="7" y2="22"/>
+                  <line x1="17" y1="2" x2="17" y2="22"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <line x1="2" y1="7" x2="7" y2="7"/>
+                  <line x1="2" y1="17" x2="7" y2="17"/>
+                  <line x1="17" y1="17" x2="22" y2="17"/>
+                  <line x1="17" y1="7" x2="22" y2="7"/>
+                </svg>
+              </div>
+
+              <h3 class="service-title" data-i18n-en="Video Editing & Content Creation">مونتاج الفيديو وصناعة المحتوى</h3>
+              <p class="service-desc" data-i18n-en="Cinematic storytelling for ads, social media campaigns, and podcasts designed to capture attention from the first second.">
+                سرد بصري سينمائي للإعلانات، المنصات الاجتماعية، والبودكاست بأسلوب يجذب المشاهد من أول ثانية ويعزز المبيعات.
+              </p>
+
+              <ul class="service-features">
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>إعلانات سينمائية وموشن جرافيك للمنتجات</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>تعديل وتلوين احترافي بمعايير البث التلفزيوني</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>مؤثرات صوتية وموسيقى مرخصة ملائمة للمملكة</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>فيديوهات ريلز وسناب شات وتيك توك عالية التفاعل</span>
+                </li>
+              </ul>
+
+              <button class="btn btn-secondary-light service-cta-btn" data-select-service="montage" data-i18n-en="Book Video Service">
+                <span>احجز خدمة المونتاج</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Service Card 2: تصميم وتطوير المواقع -->
+          <article class="service-card" data-madar-reveal="card" data-madar-delay="90">
+            <div class="sadu-ribbon" aria-hidden="true"></div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+
+              <h3 class="service-title" data-i18n-en="Web Design & Development">تصميم وتطوير المواقع والمنصات</h3>
+              <p class="service-desc" data-i18n-en="Modern, ultra-fast, and responsive websites built to convert visitors into loyal clients with complete ease.">
+                مواقع عصرية، فائقة السرعة ومتجاوبة تماماً، مبنية لتحويل الزوار إلى عملاء فعليين بكل انسيابية وثقة.
+              </p>
+
+              <ul class="service-features">
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>واجهات مستخدم (UI/UX) راقية تراعي السلوك المحلي</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>برمجة نظيفة فائقة السرعة مع توافق تام لـ SEO</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>دعم كامل للغة العربية (RTL) وتجربة جوال مثالية</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>ربط بوابات الدفع الرسمية (مدى، تابي، تمارا، Apple Pay)</span>
+                </li>
+              </ul>
+
+              <button class="btn btn-secondary-light service-cta-btn" data-select-service="web" data-i18n-en="Book Web Design">
+                <span>احجز تصميم موقعك</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Service Card 3: الهوية والجرافيك -->
+          <article class="service-card" data-madar-reveal="card" data-madar-delay="180">
+            <div class="sadu-ribbon" aria-hidden="true"></div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+
+              <h3 class="service-title" data-i18n-en="Branding & Visual Identity">الجرافيك ديزاين وبناء الهوية البصرية</h3>
+              <p class="service-desc" data-i18n-en="Comprehensive visual identities and thoughtful logos reflecting your heritage and elevating your presence in the market.">
+                هويات بصرية متكاملة وشعارات مدروسة تعكس أصالة علامتك وتمنحك هيبة وحضوراً لا يُنسى في السوق.
+              </p>
+
+              <ul class="service-features">
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>تطوير استراتيجية وشعار العلامة التجارية الفاخرة</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>دليل إرشادات الهوية الشامل (Brand Guidelines)</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>تصميم المطبوعات، التغليف، والبروشورات الراقية</span>
+                </li>
+                <li class="service-feature-item">
+                  <span class="feature-bullet"></span>
+                  <span>قوالب سوشيال ميديا موحدة تعكس الهوية بانسجام</span>
+                </li>
+              </ul>
+
+              <button class="btn btn-secondary-light service-cta-btn" data-select-service="graphic" data-i18n-en="Book Branding Service">
+                <span>احجز بناء هويتك</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Najdi Triangular Divider Transition -->
+    <div class="najdi-triangles-divider to-dark" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         4. مسيرتنا في السوق السعودي (Our Journey - "Madar" Orbit Timeline)
+         ========================================================================== -->
+    <section id="journey" class="section-padding bg-dark">
+      <div class="bg-mesh-roshan" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge dark" data-madar-reveal>
+            <span>✦</span>
+            <span data-i18n-en="Our Orbit in the Market">مفهوم «مَــدَار»</span>
+          </span>
+          <h2 class="section-title" data-madar-reveal="heading" data-madar-delay="90" data-i18n-en="Our Journey in the Saudi Market">مسيرتنا في السوق السعودي</h2>
+          <p class="section-subtitle" data-madar-reveal data-madar-delay="180" data-i18n-en="The orbit where vision meets execution, centered around our client.">
+            مثل المسار الذي يدور فيه الشيء حول مركزه، تدور مدار حول عميلها لتحول تطلعاته إلى واقع يلمسه الجمهور.
+          </p>
+        </div>
+
+        <div class="journey-wrapper">
+          <!-- Orbital SVG Track -->
+          <svg class="journey-svg-track" viewBox="0 0 140 800" preserveAspectRatio="none" aria-hidden="true">
+            <path class="journey-path" d="M70,0 C120,200 20,400 70,600 C110,700 70,800 70,800"/>
+          </svg>
+
+          <!-- Bronze Traveling Orbit Ball -->
+          <div class="journey-traveling-dot"></div>
+
+          <!-- Timeline Nodes (titles in Reem Kufi, text in IBM Plex, years without brackets) -->
+          <div class="timeline-nodes">
+            <!-- Node 1 -->
+            <div class="timeline-node">
+              <div class="node-card">
+                <h4 class="node-card-title">انطلاق الرؤية والبدايات</h4>
+                <p class="node-card-desc">تأسست مدار في قلب المملكة بفريق شغوف يجمع بين الإبداع البصري والشغف بالهوية السعودية الأصيلة.</p>
+              </div>
+              <div class="node-center">
+                <div class="node-pin"></div>
+              </div>
+              <div class="node-year">
+                <span class="node-year-text">2022</span>
+              </div>
+            </div>
+
+            <!-- Node 2 -->
+            <div class="timeline-node">
+              <div class="node-card">
+                <h4 class="node-card-title">توسّع الخدمات المتكاملة</h4>
+                <p class="node-card-desc">إطلاق خدمات تطوير المواقع الرقمية وتقديم حلول تقنية وإنتاجية متكاملة لرواد الأعمال والمتاجر المتنامية.</p>
+              </div>
+              <div class="node-center">
+                <div class="node-pin"></div>
+              </div>
+              <div class="node-year">
+                <span class="node-year-text">2023</span>
+              </div>
+            </div>
+
+            <!-- Node 3 -->
+            <div class="timeline-node">
+              <div class="node-card">
+                <h4 class="node-card-title">شراكات كبرى وحملات وطنية</h4>
+                <p class="node-card-desc">تنفيذ حملات إعلانية ومنصات رقمية لعلامات تجارية بارزة، مع ترسيخ معايير إنتاج تليق بكبرى الكيانات.</p>
+              </div>
+              <div class="node-center">
+                <div class="node-pin"></div>
+              </div>
+              <div class="node-year">
+                <span class="node-year-text">2024</span>
+              </div>
+            </div>
+
+            <!-- Node 4 -->
+            <div class="timeline-node">
+              <div class="node-card">
+                <h4 class="node-card-title">نحو آفاق المستقبل</h4>
+                <p class="node-card-desc">مواصلة الابتكار وصناعة التجارب البصرية الرقمية التي تواكب رؤية المملكة الطموحة والتحول الرقمي الشامل.</p>
+              </div>
+              <div class="node-center">
+                <div class="node-pin"></div>
+              </div>
+              <div class="node-year">
+                <span class="node-year-text">اليوم</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Najdi Triangular Divider Transition -->
+    <div class="najdi-triangles-divider to-light" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         5. أعمالنا (Portfolio Showcase: 6 Coded Interactive Demos - Brief v2 Section 3)
+         ========================================================================== -->
+    <section id="portfolio" class="section-padding bg-dark-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge light" data-madar-reveal>
+            <span>✦</span>
+            <span data-i18n-en="Interactive Demos">معرض النماذج التوضيحية</span>
+          </span>
+          <h2 class="section-title" data-madar-reveal="heading" data-madar-delay="90" data-i18n-en="Crafted Interactive Showcase">نماذج تجسد مستوى أسلوبنا</h2>
+          <p class="section-subtitle" data-madar-reveal data-madar-delay="180" data-i18n-en="Interactive code-built showcases demonstrating our technical and aesthetic standards.">
+            نماذج توضيحية مبنية بالكود لإبراز جودة الأسلوب الفني والهندسي لشركة مدار دون ادعاء أنها مشاريع عملاء سابقة.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="portfolio-filter-bar" data-madar-reveal data-madar-delay="270">
+          <button class="filter-btn active" data-filter="all" data-i18n-en="All Works">الكل</button>
+          <button class="filter-btn" data-filter="montage" data-i18n-en="Video Editing">مونتاج فيديو</button>
+          <button class="filter-btn" data-filter="web" data-i18n-en="Websites">تصميم مواقع</button>
+          <button class="filter-btn" data-filter="graphic" data-i18n-en="Graphic & Branding">جرافيك وهوية</button>
+        </div>
+
+        <!-- Portfolio Cards Grid (Interactive Coded Demos) -->
+        <div class="portfolio-grid" id="portfolio-container" data-madar-reveal="group">
+          <!-- Card 1: مونتاج - ريل سينمائي (واجهة خط زمني) -->
+          <article class="portfolio-card" data-category="montage" data-madar-reveal="card" data-madar-delay="0">
+            <div class="portfolio-preview-stage">
+              <span class="portfolio-demo-badge">
+                <span class="demo-badge-dot"></span>
+                <span>نموذج توضيحي</span>
+              </span>
+              <span class="portfolio-category-tag">مونتاج</span>
+
+              <!-- Interactive Timeline Mockup -->
+              <div class="demo-timeline-wrap">
+                <div class="timeline-header">
+                  <span>TIMELINE: 00:01:24:18</span>
+                  <span>4K 24FPS</span>
+                </div>
+                <div class="timeline-tracks">
+                  <div class="timeline-track">
+                    <span class="t-clip t-v1">مشهد سينمائي 01</span>
+                    <span class="t-clip t-v2">تلوين HDR</span>
+                  </div>
+                  <div class="timeline-track">
+                    <div class="t-audio">
+                      <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+                      <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+                    </div>
+                  </div>
+                  <div class="timeline-playhead"></div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title">ريل سينمائي</h3>
+              <p class="portfolio-card-desc">واجهة خط زمني احترافية (Timeline): مسارات فيديو وتلوين وصوت متزامنة مع مؤشر تشغيل متقدم.</p>
+              <button class="btn-demo-order" data-select-service="montage">
+                <span>اطلب شغلاً بهذا الأسلوب</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: مونتاج - فيديو قصير للسوشيال (إطار جوال 9:16 بكابشن) -->
+          <article class="portfolio-card" data-category="montage" data-madar-reveal="card" data-madar-delay="90">
+            <div class="portfolio-preview-stage">
+              <span class="portfolio-demo-badge">
+                <span class="demo-badge-dot"></span>
+                <span>نموذج توضيحي</span>
+              </span>
+              <span class="portfolio-category-tag">مونتاج</span>
+
+              <!-- 9:16 Phone Mockup with Karaoke Captions -->
+              <div class="demo-phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-ambient-glow"></div>
+                <div class="karaoke-caption-box">
+                  <span class="k-word k-w1">نصنع</span>
+                  <span class="k-word k-w2">لك</span>
+                  <span class="k-word k-w3">محتوى</span>
+                  <span class="k-word k-w4">يخطف</span>
+                  <span class="k-word k-w1">الأنظار</span>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title">فيديو قصير للسوشيال</h3>
+              <p class="portfolio-card-desc">إطار جوال عمودي 9:16 بنصوص كابشن متحركة تبرز كلمة بكلمة لرفع التفاعل على تيك توك وريلز.</p>
+              <button class="btn-demo-order" data-select-service="montage">
+                <span>اطلب شغلاً بهذا الأسلوب</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: مواقع - موقع تعريفي بالعربي (إطار متصفح وتخطيط wireframe RTL) -->
+          <article class="portfolio-card" data-category="web" data-madar-reveal="card" data-madar-delay="180">
+            <div class="portfolio-preview-stage">
+              <span class="portfolio-demo-badge">
+                <span class="demo-badge-dot"></span>
+                <span>نموذج توضيحي</span>
+              </span>
+              <span class="portfolio-category-tag">مواقع</span>
+
+              <!-- Browser Mockup Scrolling RTL Wireframe -->
+              <div class="demo-browser-frame">
+                <div class="browser-top-bar">
+                  <span class="b-dot b-dot-red"></span>
+                  <span class="b-dot b-dot-yellow"></span>
+                  <span class="b-dot b-dot-green"></span>
+                  <span class="browser-url">madar.sa/preview</span>
+                </div>
+                <div class="browser-page-scroll">
+                  <div class="wf-nav"></div>
+                  <div class="wf-hero">
+                    <div class="wf-line" style="width: 70%;"></div>
+                    <div class="wf-line" style="width: 45%;"></div>
+                    <div class="wf-btn"></div>
+                  </div>
+                  <div class="wf-grid">
+                    <div class="wf-card"></div>
+                    <div class="wf-card"></div>
+                    <div class="wf-card"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title">موقع تعريفي بالعربي</h3>
+              <p class="portfolio-card-desc">إطار متصفح رقمي يعرض تخطيطاً حياً (Wireframe) لصفحة هبوط عربية RTL مع حركة انسيابية تفاعلية.</p>
+              <button class="btn-demo-order" data-select-service="web">
+                <span>اطلب شغلاً بهذا الأسلوب</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 4: مواقع - متجر إلكتروني (شبكة منتجات وسلة بحركة إضافة) -->
+          <article class="portfolio-card" data-category="web" data-madar-reveal="card" data-madar-delay="270">
+            <div class="portfolio-preview-stage">
+              <span class="portfolio-demo-badge">
+                <span class="demo-badge-dot"></span>
+                <span>نموذج توضيحي</span>
+              </span>
+              <span class="portfolio-category-tag">مواقع</span>
+
+              <!-- E-commerce Demo Card -->
+              <div class="demo-ecommerce-card">
+                <div class="ecom-top-row">
+                  <span>المتجر الرقمي</span>
+                  <span class="ecom-cart-icon">🛒 السلة (1)</span>
+                </div>
+                <div class="ecom-product-preview">
+                  <div class="ecom-img-thumb">✨</div>
+                  <div class="ecom-details">
+                    <span class="ecom-title">عطر سدرة الفاخر - 100 مل</span>
+                    <span class="ecom-price">380 ر.س</span>
+                  </div>
+                </div>
+                <button class="ecom-add-btn" type="button">
+                  <span>+ أضف للسلة</span>
+                </button>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title">متجر إلكتروني</h3>
+              <p class="portfolio-card-desc">واجهة تجارة إلكترونية متطورة: شبكة منتجات فاخرة وسلة تسوق بحركة إضافة تفاعلية سلسة.</p>
+              <button class="btn-demo-order" data-select-service="web">
+                <span>اطلب شغلاً بهذا الأسلوب</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 5: جرافيك - هوية بصرية (لوحة براند وألوان ونقش) -->
+          <article class="portfolio-card" data-category="graphic" data-madar-reveal="card" data-madar-delay="360">
+            <div class="portfolio-preview-stage">
+              <span class="portfolio-demo-badge">
+                <span class="demo-badge-dot"></span>
+                <span>نموذج توضيحي</span>
+              </span>
+              <span class="portfolio-category-tag">جرافيك</span>
+
+              <!-- Brand Identity Board -->
+              <div class="demo-brand-board">
+                <div class="brand-board-header">
+                  <span class="brand-logo-mark">مَــدَار</span>
+                  <span style="font-size: 0.7rem; color: var(--bronze-ball);">BRAND GUIDE</span>
+                </div>
+                <div class="brand-swatches">
+                  <span class="swatch swatch-1" title="#0E3B33"></span>
+                  <span class="swatch swatch-2" title="#B07A4A"></span>
+                  <span class="swatch swatch-3" title="#D49A62"></span>
+                  <span class="swatch swatch-4" title="#F3E0CC"></span>
+                </div>
+                <div class="brand-specimen">
+                  <span>خط العناوين: ريم كوفي</span>
+                  <span>الخط الأساسي: IBM Plex</span>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title">هوية بصرية</h3>
+              <p class="portfolio-card-desc">لوحة براند متكاملة: شعار هندسي، لوحة ألوان منتقاة، ونقوش سدو ونجدية أصيلة مستوحاة من الهوية.</p>
+              <button class="btn-demo-order" data-select-service="graphic">
+                <span>اطلب شغلاً بهذا الأسلوب</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 6: جرافيك - تصاميم سوشيال (ثلاثة مربعات منشورات تتبدل) -->
+          <article class="portfolio-card" data-category="graphic" data-madar-reveal="card" data-madar-delay="450">
+            <div class="portfolio-preview-stage">
+              <span class="portfolio-demo-badge">
+                <span class="demo-badge-dot"></span>
+                <span>نموذج توضيحي</span>
+              </span>
+              <span class="portfolio-category-tag">جرافيك</span>
+
+              <!-- 3 Social Media Post Tiles -->
+              <div class="demo-social-stack">
+                <div class="social-mini-card sc-1">
+                  <span>إعلان</span>
+                  <strong>أصالة معاصرة</strong>
+                </div>
+                <div class="social-mini-card sc-2">
+                  <span>عرض خاص</span>
+                  <strong>انطلاقة علامتك</strong>
+                </div>
+                <div class="social-mini-card sc-3">
+                  <span>قصة نجاح</span>
+                  <strong>رؤية 2030</strong>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title">تصاميم سوشيال</h3>
+              <p class="portfolio-card-desc">ثلاثة منشورات متناسقة بتصاميم بصرية مختلفة تتبدل بلطف وسلاسة لإبراز تنوع المحتوى الرقمي.</p>
+              <button class="btn-demo-order" data-select-service="graphic">
+                <span>اطلب شغلاً بهذا الأسلوب</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. طريقة العمل (Process / Workflow Section)
+         ========================================================================== -->
+    <section id="process" class="section-padding bg-dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge light" data-madar-reveal>
+            <span>✦</span>
+            <span data-i18n-en="How We Work">منهجية العمل الواضحة</span>
+          </span>
+          <h2 class="section-title" data-madar-reveal="heading" data-madar-delay="90" data-i18n-en="Our 4-Step Process">كيف نصنع مشروعك خطوة بخطوة؟</h2>
+          <p class="section-subtitle" data-madar-reveal data-madar-delay="180" data-i18n-en="A smooth, transparent, and collaborative process from the first handshake to final launch.">
+            خطوات واضحة تبدأ بالضيافة وحسن الاستماع، وتثمر عن نتائج استثنائية تفوق التوقعات.
+          </p>
+        </div>
+
+        <div class="process-steps-grid" data-madar-reveal="group">
+          <div class="process-connecting-line" aria-hidden="true">
+            <div class="process-line-active"></div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="process-step-card active" data-madar-reveal="card" data-madar-delay="0">
+            <div class="process-step-number-wrap">
+              <span>01</span>
+            </div>
+            <h3 class="process-step-title" data-i18n-en="Consultation & Hospitality">استشارة وضيافة</h3>
+            <p class="process-step-desc" data-i18n-en="We listen to your vision and understand your target audience deeply.">
+              نستمع لتطلعاتك ونفهم جوهر عملك وجمهورك المستهدف بدقة واهتمام، فالقهوة والحديث أول الخطوات.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card" data-madar-reveal="card" data-madar-delay="90">
+            <div class="process-step-number-wrap">
+              <span>02</span>
+            </div>
+            <h3 class="process-step-title" data-i18n-en="Concept & Storyboard">فكرة وسيناريو</h3>
+            <p class="process-step-desc" data-i18n-en="Crafting the creative direction tailored to the Saudi consumer.">
+              نصيغ المفهوم الإبداعي، ونرسم الهيكل والقصة الموجهة لذائقة العميل السعودي لضمان التأثير المباشر.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card" data-madar-reveal="card" data-madar-delay="180">
+            <div class="process-step-number-wrap">
+              <span>03</span>
+            </div>
+            <h3 class="process-step-title" data-i18n-en="Precision Execution">تنفيذ بدقة وإتقان</h3>
+            <p class="process-step-desc" data-i18n-en="Producing, coding, and designing to the highest industry benchmarks.">
+              نبدأ الإنتاج والتصميم والبرمجة بأعلى المعايير، مع إشراكك المستمر في مراجعة مراحل الإنجاز أولاً بأول.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card" data-madar-reveal="card" data-madar-delay="270">
+            <div class="process-step-number-wrap">
+              <span>04</span>
+            </div>
+            <h3 class="process-step-title" data-i18n-en="Delivery & Handover">تسليم ومتابعة</h3>
+            <p class="process-step-desc" data-i18n-en="Handing over all master files ready for takeoff with ongoing support.">
+              نسلمك كافة الملفات والمخرجات الأصلية جاهزة للإطلاق، مع دعم فني مستمر يضمن نجاح حضورك الرقمي.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Najdi Triangular Divider Transition -->
+    <div class="najdi-triangles-divider to-dark" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         7. التزامات مدار وآراء العملاء (Brief v2 Section 4-b)
+         ========================================================================== -->
+    <section id="testimonials" class="section-padding bg-dark">
+      <div class="bg-mesh-roshan" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge dark" data-madar-reveal>
+            <span>✦</span>
+            <span data-i18n-en="Our Commitments">ميثاق الجودة والشفافية</span>
+          </span>
+          <h2 class="section-title" data-madar-reveal="heading" data-madar-delay="90" data-i18n-en="Madar Commitments">التزامات مدار لشركاء النجاح</h2>
+          <p class="section-subtitle" data-madar-reveal data-madar-delay="180" data-i18n-en="Strict authenticity policy: Zero fabricated reviews or inflated numbers.">
+            نلتزم بالشفافية المطلقة؛ لا نختلق أسماء أو تقييمات، ونضع التزاماتنا كمعيار حقيقي لجودة خدماتنا.
+          </p>
+        </div>
+
+        <!-- Dynamic Container for Testimonials / Commitments Strip -->
+        <div id="testimonials-dynamic-area">
+          <!-- Default Clean State: Madar Commitments Strip per Brief v2 -->
+          <div class="commitments-strip-container" data-madar-reveal="card">
+            <div class="commitments-header">
+              <span class="commitments-badge">
+                <span class="commitments-badge-star">✦</span>
+                <span>ثقة تبدأ بالالتزام</span>
+              </span>
+              <p class="commitments-desc">معايير عمل واضحة نلتزم بها مع كل عميل من اليوم الأول وحتى اكتمال المشروع.</p>
+            </div>
+
+            <div class="commitments-grid" data-madar-reveal="group">
+              <div class="commitment-card" data-madar-reveal="card" data-madar-delay="0">
+                <div class="commitment-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <h4>جودة في التسليم</h4>
+                <p>مخرجات احترافية مدروسة تضاهي كبرى الشركات وتلبي تطلعات السوق السعودي.</p>
+              </div>
+
+              <div class="commitment-card" data-madar-reveal="card" data-madar-delay="90">
+                <div class="commitment-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <h4>التزام بالمواعيد</h4>
+                <p>جدول زمني متفق عليه وموثق نلتزم به بدقة لحفظ وقتك وتسريع إطلاقك.</p>
+              </div>
+
+              <div class="commitment-card" data-madar-reveal="card" data-madar-delay="180">
+                <div class="commitment-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <h4>تواصل واضح</h4>
+                <p>قنوات اتصال مباشرة وسريعة مع مسؤولي التنفيذ لإطلاعك أولاً بأول.</p>
+              </div>
+            </div>
+
+            <div class="commitments-cta-wrap" data-madar-reveal data-madar-delay="270">
+              <a href="#booking" class="btn btn-primary">
+                <span>ابدأ مشروعك وكن أول رأي يُنشر هنا</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Najdi Triangular Divider Transition -->
+    <div class="najdi-triangles-divider to-clay" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         8. الحجز: ذروة الصفحة (Booking Climax Section - Brief v2)
+         ========================================================================== -->
+    <section id="booking" class="bg-dark">
+      <div class="bg-mesh-roshan" aria-hidden="true"></div>
+
+      <div class="container">
+        <!-- Najdi Door Architectural Frame Container -->
+        <div class="booking-najdi-door-frame">
+          <div class="door-arch-top">
+            <svg class="door-arch-symbol" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2"/>
+            </svg>
+          </div>
+
+          <!-- Hospitality Greeting with animated Steaming Dallah & Finjan -->
+          <div class="hospitality-banner" data-madar-reveal="card">
+            <div class="dallah-steaming-wrap">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path class="steam-wisp" d="M30 6 Q33 11 30 16" stroke="var(--bronze-ball)" stroke-width="2"/>
+                <path class="steam-wisp" d="M36 4 Q39 9 36 14" stroke="var(--bronze-ball)" stroke-width="2"/>
+                <path d="M26 22 L38 22 L42 42 L22 42 Z"/>
+                <path d="M28 22 L32 16 L36 22"/>
+                <path d="M22 30 C12 30 16 18 26 22"/>
+                <rect x="20" y="42" width="24" height="6" rx="2"/>
+                <path d="M46 36 L54 36 L52 46 L48 46 Z"/>
+                <line x1="46" y1="48" x2="54" y2="48"/>
+              </svg>
+            </div>
+            <div class="hospitality-text-wrap">
+              <span class="hospitality-phrase">حيّاك الله... تفضّل تقهو معنا</span>
+              <span class="hospitality-sub">فكرتك أمانة، ونحن هنا لنحملها إلى أفق أوسع بروح الضيافة السعودية</span>
+            </div>
+          </div>
+
+          <!-- Dedicated Direct Contact Card (Brief v2 Page 3) -->
+          <div class="booking-direct-contact-card" data-madar-reveal="card" data-madar-delay="90">
+            <div class="contact-card-header">
+              <span class="contact-card-badge">تواصل مباشر وسريع</span>
+              <div class="contact-card-phone" id="booking-display-phone">+20 121 252 9087</div>
+              <p class="contact-card-sub">فريق مدار جاهز للرد على استفسارك ومناقشة تفاصيل مشروعك</p>
+            </div>
+            <div class="contact-card-actions">
+              <button id="btn-copy-phone" class="btn-contact-action btn-copy" type="button" aria-label="نسخ رقم الهاتف">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span id="copy-text">نسخ الرقم</span>
+              </button>
+              <a id="btn-call-phone" href="tel:+201212529087" class="btn-contact-action btn-call" aria-label="اتصال مباشر">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>اتصال</span>
+              </a>
+              <a id="btn-booking-card-whatsapp" href="https://wa.me/201212529087?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%B9%20%D9%85%D8%AF%D8%A7%D8%B1" 
+                 class="btn-contact-action btn-whatsapp-action" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 aria-label="محادثة واتساب">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+                </svg>
+                <span>واتساب</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="booking-header" data-madar-reveal="heading" data-madar-delay="180">
+            <h2 class="booking-title" data-i18n-en="Let's Start Your Project">تفضّل... خلّنا نبدأ مشروعك</h2>
+            <div class="booking-response-badge">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                <polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <span data-i18n-en="We reply within 24 hours">نرد خلال 24 ساعة</span>
+            </div>
+          </div>
+
+          <!-- Booking Form -->
+          <form id="madar-booking-form" class="booking-form" data-madar-reveal data-madar-delay="270" novalidate>
+            <!-- 1. الاسم -->
+            <div class="form-group">
+              <label for="booking-name" class="form-label">
+                <span>الاسم الكريم</span>
+                <span class="required-asterisk">*</span>
+              </label>
+              <input type="text" id="booking-name" name="name" class="form-input" placeholder="مثال: عبدالله التميمي" required>
+            </div>
+
+            <!-- 2. رقم الجوال (يدعم دول الخليج ومصر مع تنسيق تلقائي) -->
+            <div class="form-group">
+              <label for="booking-phone" class="form-label">
+                <span>رقم الجوال</span>
+                <span class="required-asterisk">*</span>
+              </label>
+              <div class="phone-input-wrap">
+                <select id="booking-country-code" class="phone-country-code-select" aria-label="مفتاح الدولة">
+                  <option value="+966" data-mask="5X XXX XXXX" data-len="9">🇸🇦 +966 (السعودية)</option>
+                  <option value="+971" data-mask="5X XXX XXXX" data-len="9">🇦🇪 +971 (الإمارات)</option>
+                  <option value="+965" data-mask="X XXX XXXX" data-len="8">🇰🇼 +965 (الكويت)</option>
+                  <option value="+974" data-mask="X XXX XXXX" data-len="8">🇶🇦 +974 (قطر)</option>
+                  <option value="+973" data-mask="X XXX XXXX" data-len="8">🇧🇭 +973 (البحرين)</option>
+                  <option value="+968" data-mask="X XXX XXXX" data-len="8">🇴🇲 +968 (عُمان)</option>
+                  <option value="+20" data-mask="1X XXXX XXXX" data-len="10">🇪🇬 +20 (مصر)</option>
+                </select>
+                <input type="tel" id="booking-phone" name="phone" class="form-input phone-number-field" placeholder="5X XXX XXXX" required>
+              </div>
+              <span class="form-input-hint" id="phone-hint">نقبل أرقام السعودية والخليج ومصر مع تنسيق تلقائي</span>
+            </div>
+
+            <!-- 3. الخدمة المطلوبة -->
+            <div class="form-group">
+              <label for="booking-service" class="form-label">
+                <span>الخدمة المطلوبة</span>
+                <span class="required-asterisk">*</span>
+              </label>
+              <select id="booking-service" name="service" class="form-select" required>
+                <option value="montage">مونتاج فيديو وصناعة محتوى</option>
+                <option value="web">تصميم وتطوير موقع أو منصة</option>
+                <option value="graphic">جرافيك ديزاين وهوية بصرية</option>
+                <option value="all">باقة متكاملة (أكثر من خدمة)</option>
+              </select>
+            </div>
+
+            <!-- 4. الميزانية التقريبية (بدون أقواس) -->
+            <div class="form-group">
+              <label for="booking-budget" class="form-label">
+                <span>الميزانية التقريبية (بالريال السعودي ر.س)</span>
+                <span class="form-input-hint">(اختياري)</span>
+              </label>
+              <select id="booking-budget" name="budget" class="form-select">
+                <option value="">اختر شريحة الميزانية المناسبة</option>
+                <option value="tier1">5,000 - 15,000 ر.س</option>
+                <option value="tier2">15,000 - 30,000 ر.س</option>
+                <option value="tier3">أكثر من 30,000 ر.س</option>
+              </select>
+            </div>
+
+            <!-- 5. الوقت المناسب للمكالمة -->
+            <div class="form-group">
+              <label for="booking-time" class="form-label">
+                <span>الوقت المناسب للمكالمة (توقيت الرياض UTC+3)</span>
+              </label>
+              <select id="booking-time" name="call_time" class="form-select">
+                <option value="asap">أقرب موعد متاح</option>
+                <option value="morning">صباحاً (9:00 ص - 1:00 ظ)</option>
+                <option value="evening">مساءً (4:00 ع - 9:00 م)</option>
+              </select>
+            </div>
+
+            <!-- 6. تفاصيل المشروع -->
+            <div class="form-group full-width">
+              <label for="booking-notes" class="form-label">
+                <span>نبذة عن مشروعك أو أهدافك</span>
+                <span class="form-input-hint">(اختياري)</span>
+              </label>
+              <textarea id="booking-notes" name="notes" class="form-textarea" rows="3" placeholder="أخبرنا باختصار عن فكرتك، الجدول الزمني، أو أي استفسار ترغب بطرحه..."></textarea>
+            </div>
+
+            <!-- Form Actions with Climax Orbit Ring -->
+            <div class="form-actions-wrap">
+              <!-- Ring with resting bronze ball above booking CTA (Brief v2 Page 1) -->
+              <div class="booking-orbit-climax-emblem" aria-hidden="true">
+                <svg class="climax-ring-svg" viewBox="0 0 100 65">
+                  <defs>
+                    <radialGradient id="climaxBallGrad" cx="38%" cy="32%" r="70%">
+                      <stop offset="0" stop-color="#F6DDB8"/>
+                      <stop offset="0.45" stop-color="#D49A62"/>
+                      <stop offset="1" stop-color="#8E5A31"/>
+                    </radialGradient>
+                  </defs>
+                  <!-- Ring arc -->
+                  <path d="M 15 55 A 40 40 0 0 1 85 55" fill="none" stroke="#B07A4A" stroke-width="2" stroke-dasharray="3 3"/>
+                  <!-- Bronze ball resting at top apex (50, 15) -->
+                  <circle cx="50" cy="15" r="7.5" fill="url(#climaxBallGrad)" stroke="#B07A4A" stroke-width="1.5"/>
+                </svg>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-booking-submit" data-i18n-en="Confirm Consultation Booking">
+                <span>تأكيد حجز الاستشارة</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+
+              <div class="booking-or-divider">
+                <span>أو إذا كنت تفضل الحديث المباشر</span>
+              </div>
+
+              <a href="https://wa.me/201212529087?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%B9%20%D9%85%D8%AF%D8%A7%D8%B1" 
+                 class="btn btn-whatsapp btn-booking-whatsapp" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 data-i18n-en="Chat via WhatsApp Instantly">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+                </svg>
+                <span>تواصل عبر واتساب مباشرة</span>
+              </a>
+            </div>
+          </form>
+
+          <!-- Authentic Saudi Hospitality Success Message Overlay -->
+          <div id="booking-success-msg" class="booking-success-message">
+            <svg class="success-icon-symbol" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="45" stroke="var(--bronze-ball)" stroke-width="3"/>
+              <polygon points="50,15 85,50 50,85 15,50" fill="none" stroke="var(--bronze)" stroke-width="2"/>
+              <polyline points="32 52 44 64 68 38" stroke="var(--bronze-ball)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="success-phrase">أبشر بسعدك!</h3>
+            <p class="success-details">
+              وصلنا طلبك بنجاح، وراح يتواصل معك مستشار مدار في الموعد المحدد بإذن الله. القهوة جاهزة والحديث معك يسرنا!
+            </p>
+            <a id="btn-success-whatsapp" href="#" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <span>أكمل عبر واتساب الآن</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Najdi Triangular Divider Transition -->
+    <div class="najdi-triangles-divider to-light" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         9. أسئلة شائعة (FAQ Accordion Section)
+         ========================================================================== -->
+    <section id="faq" class="section-padding bg-dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge light" data-madar-reveal>
+            <span>✦</span>
+            <span data-i18n-en="Frequently Asked Questions">إجابات واضحة وشفافة</span>
+          </span>
+          <h2 class="section-title" data-madar-reveal="heading" data-madar-delay="90" data-i18n-en="FAQ">أسئلة شائعة يطرحها عملاؤنا</h2>
+          <p class="section-subtitle" data-madar-reveal data-madar-delay="180" data-i18n-en="Everything you need to know about pricing, timeline, copyrights, and payments.">
+            كل ما يهمك معرفته حول أسعارنا، مواعيد التسليم، طرق الدفع المعتمدة، وحقوق الملكية الفكرية.
+          </p>
+        </div>
+
+        <div class="faq-accordion-wrap" data-madar-reveal="group">
+          <!-- FAQ 1 -->
+          <div class="faq-item" data-madar-reveal="card" data-madar-delay="0">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>كيف يتم تحديد أسعار الخدمات وباقات العمل؟</span>
+              <div class="faq-icon-indicator">+</div>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-inner">
+                نقدم خطط أسعار مرنة ومدروسة تعتمد على حجم ومتطلبات كل مشروع (سواء كان إعلان منفرد، أو هوية بصرية كاملة، أو منصة ويب تفاعلية). يمكنك اختيار الشريحة المناسبة عبر نموذج الحجز وسنزودك بعرض مالي مفصل ومناسب لميزانيتك.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item" data-madar-reveal="card" data-madar-delay="90">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>كم يستغرق تنفيذ المشروع من البداية حتى التسليم النهائي؟</span>
+              <div class="faq-icon-indicator">+</div>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-inner">
+                تتراوح المدة حسب نوع الخدمة: المونتاج الإعلاني عادة يستغرق 3 - 7 أيام عمل، وتصميم وتطوير المواقع 2 - 4 أسابيع، وبناء الهوية البصرية 1 - 3 أسابيع، مع التزام تام بالجدول الزمني المتفق عليه.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item" data-madar-reveal="card" data-madar-delay="180">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>هل تشمل الخدمات جولات تعديل بعد استلام المسودات؟</span>
+              <div class="faq-icon-indicator">+</div>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-inner">
+                نعم بالتأكيد، كافة باقاتنا تشمل جولات تعديل مدروسة لضمان الرضا التام، ونسير معك خطوة بخطوة حتى نصل للنتيجة التي تعكس تطلعاتك وتلبي طموح علامتك.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item" data-madar-reveal="card" data-madar-delay="270">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>ما هي طرق ووسائل الدفع المتاحة داخل المملكة ودول الخليج؟</span>
+              <div class="faq-icon-indicator">+</div>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-inner">
+                نوفر كافة خيارات الدفع الرسمية والمريحة المعتمدة في المملكة بما في ذلك: التحويل البنكي المباشر للحساب التجاري، بطاقات مدى (Mada)، فيزا وماستركارد، وخدمات أبل باي (Apple Pay).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item" data-madar-reveal="card" data-madar-delay="360">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>من يمتلك حقوق الملكية الفكرية للمواد والتصاميم المنجزة؟</span>
+              <div class="faq-icon-indicator">+</div>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-inner">
+                تنتقل كامل حقوق الملكية الفكرية والمصدرية (Source Files) والتجارية إليك بشكل كامل ومطلق بمجرد سداد الدفعة النهائية للمشروع، ويحق لك تسجيلها أو استخدامها دون أي قيود.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item" data-madar-reveal="card" data-madar-delay="450">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>هل تقدمون خدمات المونتاج والمواقع للمتاجر والتطبيقات؟</span>
+              <div class="faq-icon-indicator">+</div>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-inner">
+                نعم، نمتلك خبرة واسعة في مونتاج إعلانات المنتجات وسناب شات وتيك توك للمتاجر، وتطوير صفحات الهبوط ذات معدل التحويل العالي (Landing Pages)، وتصميم واجهات تطبيقات الهواتف الذكية.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item" data-madar-reveal="card">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>كيف نبدأ العمل معكم وما هي أول خطوة مطلوبة؟</span>
+              <div class="faq-icon-indicator">+</div>
+            </button>
+            <div class="faq-answer-collapse">
+              <div class="faq-answer-inner">
+                الأمر في غاية البساطة: املأ نموذج الحجز أعلاه أو تواصل معنا مباشرة عبر واتساب، وسيقوم مستشارنا بالتنسيق معك وتحديد موعد المكالمة الاستشارية ومناقشة تفاصيل مشروعك بكل رحابة صدر.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       10. التذييل (Footer)
+       ========================================================================== -->
+  <footer id="site-footer">
+    <div class="sadu-ribbon" aria-hidden="true"></div>
+
+    <div class="container footer-top-padding">
+      <div class="footer-grid" data-madar-reveal="group">
+        <!-- Brand Column -->
+        <div class="footer-brand-col" data-madar-reveal data-madar-delay="0">
+          <div class="site-brand">
+            <img src="assets/logo-madar-full-cropped.png" alt="مدار MADAR" class="brand-logo-img">
+          </div>
+          <p class="footer-bio">
+            شركة متخصصة في المونتاج وتصميم المواقع والجرافيك ديزاين، بهوية سعودية معاصرة ومستوى الشركات الكبرى. حيث تدور الفكرة حول عميلها.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div data-madar-reveal data-madar-delay="90">
+          <h4 class="footer-col-title" data-i18n-en="Quick Links">روابط سريعة</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#journey">مسيرتنا</a></li>
+            <li><a href="#portfolio">أعمالنا</a></li>
+            <li><a href="#process">طريقة العمل</a></li>
+            <li><a href="#testimonials">التزاماتنا</a></li>
+            <li><a href="#faq">أسئلة شائعة</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div data-madar-reveal data-madar-delay="180">
+          <h4 class="footer-col-title" data-i18n-en="Services">خدماتنا</h4>
+          <ul class="footer-links-list">
+            <li><a href="#services">مونتاج الفيديو الإعلاني</a></li>
+            <li><a href="#services">تصميم وتطوير المواقع</a></li>
+            <li><a href="#services">بناء الهوية البصرية</a></li>
+            <li><a href="#services">ريلز وتيك توك تفاعلي</a></li>
+            <li><a href="#services">صفحات الهبوط للشركات</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Channels (Unified Number per Brief v2) -->
+        <div data-madar-reveal data-madar-delay="270">
+          <h4 class="footer-col-title" data-i18n-en="Contact Us">تواصل معنا</h4>
+          <div class="footer-contact-items">
+            <a href="tel:+201212529087" class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+              </svg>
+              <span>+20 121 252 9087</span>
+            </a>
+            <a href="mailto:contact@madar.sa" class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>contact@madar.sa</span>
+            </a>
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span>madar.sa</span>
+            </div>
+          </div>
+
+          <div class="footer-social-row">
+            <a href="https://instagram.com/madar.sa" target="_blank" rel="noopener noreferrer" class="social-pill">Instagram</a>
+            <a href="https://tiktok.com/@madar.sa" target="_blank" rel="noopener noreferrer" class="social-pill">TikTok</a>
+            <a href="https://snapchat.com/add/madar.sa" target="_blank" rel="noopener noreferrer" class="social-pill">Snapchat</a>
+            <a href="https://x.com/madar_sa" target="_blank" rel="noopener noreferrer" class="social-pill">X</a>
+            <a href="https://linkedin.com/company/madar-sa" target="_blank" rel="noopener noreferrer" class="social-pill">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar" data-madar-reveal>
+        <div>
+          <span>جميع الحقوق محفوظة © <span id="current-year">2026</span> شركة مدار (Madar). المملكة العربية السعودية.</span>
+          <span style="margin-inline: 0.5rem;">•</span>
+          <a href="#" id="open-privacy-link" style="text-decoration: underline;">سياسة الخصوصية ونظام حماية البيانات (PDPL)</a>
+        </div>
+
+        <a href="#hero" id="back-to-top" class="back-to-top-btn" aria-label="العودة لأعلى الصفحة">
+          <span>العودة للأعلى</span>
+          <div class="back-top-orbit">
+            <div class="back-top-dot"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Fixed Mobile Bottom Action Bar (<= 768px - 3 Buttons per Brief v2)
+       ========================================================================== -->
+  <div id="mobile-bottom-bar" aria-label="إجراءات سريعة للجوال">
+    <div class="mobile-bar-content">
+      <a href="tel:+201212529087" class="btn btn-mobile-call" aria-label="اتصل بنا">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>اتصل</span>
+      </a>
+      <a href="https://wa.me/201212529087?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%B9%20%D9%85%D8%AF%D8%A7%D8%B1" 
+         class="btn btn-whatsapp" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         aria-label="تواصل واتساب">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+        </svg>
+        <span>واتساب</span>
+      </a>
+      <a href="#booking" class="btn btn-primary" aria-label="احجز استشارتك">
+        <span>احجز</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Floating WhatsApp Button (Brief v2 Section 2 - Pulse every 6s)
+       ========================================================================== -->
+  <a href="https://wa.me/201212529087?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%B9%20%D9%85%D8%AF%D8%A7%D8%B1" 
+     class="floating-whatsapp-btn" 
+     id="floating-whatsapp-btn" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="تواصل مع مدار عبر واتساب">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+    </svg>
+  </a>
+
+  <!-- Privacy Policy & PDPL Modal -->
+  <div id="privacy-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="سياسة الخصوصية ونظام PDPL">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="إغلاق النافذة">✕</button>
+      <div class="modal-body">
+        <h3 style="color: var(--madar-green); margin-bottom: 1rem;">سياسة الخصوصية ونظام حماية البيانات الشخصية (PDPL)</h3>
+        <p style="font-size: 0.98rem; line-height: 1.8; color: var(--text-dark); margin-bottom: 1rem;">
+          تلتزم شركة مدار (Madar) بأعلى معايير حماية الخصوصية والبيانات الشخصية وفقاً للأنظمة المعمول بها في المملكة العربية السعودية، وتحديداً نظام حماية البيانات الشخصية الصادر بالمرسوم الملكي رقم (م/19) وتعديلاته ولائحته التنفيذية.
+        </p>
+        <h4 style="color: var(--clay); margin-top: 1.2rem; margin-bottom: 0.5rem;">البيانات التي نجمعها</h4>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark);">
+          نجمع فقط البيانات الضرورية للتواصل معك وتقديم عروض الخدمات الاستشارية بناءً على طلبك الصريح (الاسم، رقم الجوال، نوع الخدمة، والميزانية التقريبية). لا نقوم ببيع أو مشاركة بياناتك مع أي طرف ثالث لأغراض تسويقية غير مصرح بها.
+        </p>
+        <h4 style="color: var(--clay); margin-top: 1.2rem; margin-bottom: 0.5rem;">ملفات تعريف الارتباط وتتبع الإعلانات</h4>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-dark);">
+          لا نقوم بتفعيل بكسلات التتبع الإعلاني إلا بعد موافقتك الصريحة عبر شريط ملفات تعريف الارتباط.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Saudi PDPL Cookie Banner -->
+  <div id="cookie-banner" role="region" aria-label="موافقة ملفات تعريف الارتباط">
+    <p class="cookie-text">
+      نستخدم ملفات تعريف الارتباط لتحسين تجربة تصفحك وتقديم خدمات مخصصة بما يتوافق مع <strong>نظام حماية البيانات الشخصية السعودي (PDPL)</strong>.
+    </p>
+    <div class="cookie-actions">
+      <button id="cookie-accept-btn" class="btn btn-primary btn-cookie-accept">أوافق</button>
+      <button id="cookie-settings-btn" class="btn btn-secondary btn-cookie-settings">إعدادات الخصوصية</button>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

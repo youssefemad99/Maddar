@@ -1,0 +1,19 @@
+{
+  "name": "madar-sa",
+  "version": "2.0.0",
+  "description": "Official Website for MADAR (مدار) - Video Editing, Web Development, and Visual Identity",
+  "main": "index.html",
+  "scripts": {
+    "build": "node verify-build.js",
+    "check": "node verify-build.js",
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": [
+    "madar",
+    "saudi",
+    "creative-agency",
+    "portfolio"
+  ],
+  "author": "Madar",
+  "license": "UNLICENSED"
+}

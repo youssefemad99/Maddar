@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 879 773" width="879" height="773">
+  <defs>
+    <radialGradient id="ball" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#F6DDB8"/><stop offset="0.45" stop-color="#D49A62"/><stop offset="1" stop-color="#8E5A31"/>
+    </radialGradient>
+  </defs>
+  <circle id="ring" cx="483.6" cy="401.0" r="206.5" fill="none" stroke="#B07A4A" stroke-width="2.4"/>
+  <circle id="ball" cx="626.6" cy="254.6" r="18.5" fill="url(#ball)"/>
+</svg>

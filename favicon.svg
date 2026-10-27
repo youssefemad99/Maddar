@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="favBall" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#F6DDB8"/>
+      <stop offset="0.45" stop-color="#D49A62"/>
+      <stop offset="1" stop-color="#8E5A31"/>
+    </radialGradient>
+  </defs>
+  <!-- Dark Background -->
+  <rect width="100" height="100" rx="22" fill="#0B0F0E"/>
+  <!-- Orbital Ring -->
+  <circle cx="50" cy="50" r="32" fill="none" stroke="#B07A4A" stroke-width="2.5"/>
+  <!-- Bronze Orbiting Ball -->
+  <circle cx="72" cy="28" r="6.5" fill="url(#favBall)" stroke="#0B0F0E" stroke-width="1.5"/>
+  <!-- Madar Calligraphic Initial Curve / Wordmark Symbol -->
+  <path d="M30 62 C34 50, 42 42, 54 42 C62 42, 68 47, 70 54 C68 59, 60 62, 48 62 Z" fill="#F3E0CC"/>
+  <path d="M42 32 L42 60" stroke="#F3E0CC" stroke-width="4.5" stroke-linecap="round"/>
+</svg>
