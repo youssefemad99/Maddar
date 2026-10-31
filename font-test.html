@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar-SA" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختبار خط العناوين وحرف القاف — مدار</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0B0F0E;
+      color: #F3E0CC;
+      padding: 3rem 2rem;
+      letter-spacing: 0 !important;
+      font-feature-settings: normal;
+      font-variant-ligatures: normal;
+    }
+    .header {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      text-align: center;
+      border-bottom: 1px solid rgba(212, 154, 98, 0.3);
+      padding-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #D49A62;
+      margin-bottom: 0.5rem;
+    }
+    p.sub {
+      color: #D5CBB9;
+      font-size: 1.05rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #141B19;
+      border: 1px solid rgba(176, 122, 74, 0.25);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .word-large {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #F3E0CC;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .word-semi {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #D49A62;
+      margin-bottom: 0.5rem;
+    }
+    .position-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: #B07A4A;
+      background: rgba(176, 122, 74, 0.12);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      margin-top: 0.4rem;
+    }
+    .qaf-highlight {
+      color: #F6DDB8;
+      border-bottom: 2px solid #D49A62;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>فحص شكل حرف «ق» — IBM Plex Sans Arabic</h1>
+    <p class="sub">مواضع حرف القاف: بداية، وسط، نهاية، منفصل — بدون letter-spacing وبدون تشويه الحروف المتصلة</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="word-large">قريباً</div>
+      <div class="word-semi">قريباً</div>
+      <span class="position-tag">قاف في البداية (متصلة)</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">الجودة</div>
+      <div class="word-semi">الجودة</div>
+      <span class="position-tag">نص كلاسيكي</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">القاهرة</div>
+      <div class="word-semi">القاهرة</div>
+      <span class="position-tag">قاف في الوسط (بعد ألف ولام)</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">تسويق</div>
+      <div class="word-semi">تسويق</div>
+      <span class="position-tag">قاف في النهاية (متصلة)</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">مشرق</div>
+      <div class="word-semi">مشرق</div>
+      <span class="position-tag">قاف في النهاية (متصلة)</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">قطاع</div>
+      <div class="word-semi">قطاع</div>
+      <span class="position-tag">قاف في البداية</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">الحقيقة</div>
+      <div class="word-semi">الحقيقة</div>
+      <span class="position-tag">قاف مزدوجة في الوسط</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">موثوق</div>
+      <div class="word-semi">موثوق</div>
+      <span class="position-tag">قاف في النهاية (منفصلة)</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">اقتراح</div>
+      <div class="word-semi">اقتراح</div>
+      <span class="position-tag">قاف في الوسط (ساكنة)</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">تقييم</div>
+      <div class="word-semi">تقييم</div>
+      <span class="position-tag">قاف في الوسط (مكسورة)</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">الفخامة</div>
+      <div class="word-semi">الفخامة</div>
+      <span class="position-tag">نص العنوان</span>
+    </div>
+
+    <div class="card">
+      <div class="word-large">رقمي</div>
+      <div class="word-semi">رقمي</div>
+      <span class="position-tag">قاف في الوسط</span>
+    </div>
+  </div>
+</body>
+</html>
